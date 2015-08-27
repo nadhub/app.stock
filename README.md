@@ -15,6 +15,6 @@ App  for managing  stock, using Flux and ReactJS for the Front End and Express o
  ```
  git clone git@github.com:nadhub/app.stock.git
          npm i
-         npm start (Sous Windows il faut ajout une variable d'environnement 'TARGET' set TARGET=dev)   
+         npm start (Sous Windows il faut ajouter une variable d'environnement 'TARGET' set TARGET=dev)   
 ```
 
