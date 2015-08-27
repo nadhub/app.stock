@@ -1,0 +1,33 @@
+{
+  "name": "teleste.stock",
+  "version": "1.0.0",
+  "description": "Application for managing  stock",
+  "main": "index.js",
+  "scripts": {
+    "start": "TARGET=dev webpack-dev-server"
+  },
+  "keywords": [
+    "stock",
+    "inventory"
+  ],
+  "author": "nadir.hamaidi",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^5.8.22",
+    "babel-loader": "^5.3.2",
+    "html-webpack-plugin": "^1.6.1",
+    "node-libs-browser": "^0.5.2",
+    "react-hot-loader": "^1.2.8",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.11.0",
+    "webpack-dev-server": "^1.10.1",
+    "webpack-merge": "^0.1.3"
+  },
+  "dependencies": {
+    "alt": "^0.17.1",
+    "lodash": "^3.10.1",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "superagent": "^1.3.0"
+  }
+}
