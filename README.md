@@ -1,6 +1,6 @@
 # app.stock
 
-This App is for managing my stock, I am using Flux and ReactJS for the Front End and Express on Backend (API). 
+App  for managing  stock, using Flux and ReactJS for the Front End and Express on Backend (API). 
 
 
 
