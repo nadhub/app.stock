@@ -9,6 +9,7 @@ import ProductStore from './ProductStore'
 class HeaderStore{
  constructor(){
      this.list = [];
+     this.menuAction='';
      this.bindListeners({
          addToList: ProductActions.LIST_PRODUCTS
      })
@@ -17,6 +18,7 @@ class HeaderStore{
  addToList(){
      this.waitFor(ProductStore);
      this.list = ProductStore.getState().listProducts;
+     this.menuAction = ProductStore.getState().menuAction;
  }
 
 }

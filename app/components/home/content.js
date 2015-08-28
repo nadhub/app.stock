@@ -10,9 +10,9 @@ import ProductActions from '../../actions/productActions';
 import ProductStore from '../../stores/ProductStore';
 
 import ProductListItems from '../product/productListItems';
+import Navbar from '../navigation/navbar';
 import Search from './search';
-import AddToStock from '../product/stock';
-import RemoveFromStock from '../product/destock';
+
 
 class Content extends React.Component {
 
@@ -23,13 +23,13 @@ class Content extends React.Component {
         this.storeChanged = this.storeChanged.bind(this);
         ProductStore.listen(this.storeChanged);
         this.state.input = '';
-        this.state.classNameBTN ='btn btn-default btn-sm';
+
 
         this.searchForProduct = this.searchForProduct.bind(this);
-        this.stock = this.stock.bind(this);
-        this.destock = this.destock.bind(this);
-        this.commande = this.commande.bind(this);
-        this.devis = this.devis.bind(this);
+        this.menuAction = this.menuAction.bind(this);
+        this.addToList = this.addToList.bind(this);
+        this.removeFromList = this.removeFromList.bind(this);
+
     }
 
     componentWillUnmount(){
@@ -45,36 +45,45 @@ class Content extends React.Component {
         ProductActions.filterProducts(e.target.value)
     }
 
-    stock(prod){
-        ProductActions.stock(prod);
-        ProductActions.listProducts()
-    }
-
-    destock(prod){
-        ProductActions.destock(prod);
-        ProductActions.listProducts()
-    }
-    commande(prod){
-        ProductActions.command(prod)
-        ProductActions.listProducts()
-
-    }
-    devis(prod){
-            ProductActions.devis(prod)
-            ProductActions.listProducts()
-
+    menuAction(text){
+        //this.setState({menuAction: text});
+        ProductActions.menuAction(text)
+        switch (text){
+            case  'Entree':
+                alert('Veuillez cliquez sur ajouter pour selectionner le(s) produit(s)');
+            break;
         }
+    }
+
+    addToList(prod){
+        ProductActions.addToList(prod)
+        ProductActions.listProducts()
+    }
+
+    removeFromList(prod){
+            ProductActions.removeFromList(prod)
+            ProductActions.listProducts()
+        }
+
+
 
     render(){
 
         return (
-            <div className="container-fluid my-container">
-                <Search  searchInput={this.state.input} onChange={this.searchForProduct}/>
-                <div className="row info-box">
-                    <ProductListItems  products={this.state.products} stock={this.stock} destock={this.destock} command={this.commande} devis={this.devis}/>
+            <div>
+                <div className="row">
+                    <Navbar action={this.menuAction}/>
                 </div>
+                <div className="row container-fluid my-container">
 
+                    <Search  searchInput={this.state.input} onChange={this.searchForProduct}/>
+                    <div className="row info-box">
+                        <ProductListItems  products={this.state.products} action={this.state.menuAction} addToList={this.addToList} removeFromList={this.removeFromList}/>
+                    </div>
+
+                </div>
             </div>
+
         )
 
     }

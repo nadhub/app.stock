@@ -28,26 +28,23 @@ class ProductActions{
     getProduct(id){
         this.dispatch(id);
     }
-
-    stock(prod){
-        this.dispatch(prod);
+    menuAction(text){
+        this.dispatch(text);
     }
 
-    destock(prod){
-        this.dispatch(prod);
+    addToList(prod){
+        this.dispatch(prod)
+    }
+
+    removeFromList(prod){
+        this.dispatch(prod)
     }
 
     listProducts(){
         this.dispatch()
     }
 
-    command(prod){
-        this.dispatch(prod)
-    }
 
-    devis(prod){
-        this.dispatch(prod)
-    }
 
 }
 

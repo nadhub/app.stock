@@ -24,7 +24,7 @@ class Home extends React.Component {
 
             <div classNameName="">
                 <Header {...this.state}/>
-                <Navbar />
+
                 <RouteHandler {...this.state} search={this.setSearchCriteria} />
             </div>
         )

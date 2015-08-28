@@ -4,10 +4,7 @@
 
 import React from 'react';
 import {Link} from 'react-router';
-import Stock from './stock';
-import Destock from './destock';
-import CommandBtn from './commandBtn'
-import DevisBtn from './devisBtn'
+
 
 
 
@@ -22,25 +19,17 @@ class ProductItem extends React.Component{
                 <div className="panel panel-default">
 
                     <div className="panel-body">
-                        <Link to="detail" params={{productId: prod._id}}><h3>{prod.productName}</h3></Link>
+                        <h3>{prod.productName}</h3>
                         <img className="img-rounded img-responsive image" src={prod.imgUrl} />
+                        {prod.isSelected ? <button className='btn btn-success pull-right selected' >Selected <i className="glyphicon glyphicon-ok"></i></button> : ''}
                         <p className="qty"><small>Stock</small> <span  className="stock">{prod.stock}</span> </p>
                         <p className="tpn"> {prod.productCode} </p>
-                        <div className="menu-option">
-                                <div className="row">
-                                    <div className="col-sm-6 pull-left">
-                                        <CommandBtn command={this.props.command.bind(null, prod)} prod={prod}/> &nbsp;
-                                        <DevisBtn devis={this.props.devis.bind(null, prod)} prod={prod}/>
-                                    </div>
-                                    <div className="col-sm-6 pull-right">
-                                        <Stock  stock={this.props.stock.bind(null, prod)} /> &nbsp;
-                                        <Destock destock={this.props.destock.bind(null, prod)} prod={prod}/>
-                                    </div>
-                                </div>
+                        <div className="">
+                            <Link to="detail" params={{productId: prod._id}}><button className="btn btn-default">Details...</button></Link>
+                            {this.props.action !== '' &&  !prod.isSelected ? <button className='btn btn-primary pull-right' onClick={this.props.addToList.bind(null, prod)}>Ajouter à la liste</button> : ''}
+                            {prod.isSelected ? <button className='btn btn-default pull-right' onClick={this.props.removeFromList.bind(null, prod)} >Retirer de la liste <i className="glyphicon glyphicon-minus"></i></button>  : ''}
 
-
-                                   <p>{prod.inList ? <button className="btn btn-primary product-selected">A {prod.forList}</button>: '' }</p>
-                                </div>
+                        </div>
                         </div>
                 </div>
                 <hr/>

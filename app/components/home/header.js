@@ -38,10 +38,9 @@ export default class Header extends React.Component {
         if (this.state.list.length) {
             for(let i=1; i< this.state.list.length; i++){
                 qty += this.state.list[i]['quantity'];
-                console.log(this.state.list.length);
             }
             button = (
-                <button className="btn btn-success btn-lg">{this.state.list.length} Produit(s) à {this.state.list[0]['forList']} <br/> Cliquer pour voir la liste</button>
+                <button className="btn btn-success btn-lg">{this.state.menuAction}  : {this.state.list.length} Produit(s) <br/> Cliquer pour voir la liste</button>
             )
         }else{
             button = '';
@@ -53,7 +52,10 @@ export default class Header extends React.Component {
                         <Link to="home"> <h2> Teleste | SAV </h2> </Link>
                     </div>
                     <div className="col-sm-6 text-right ">
-                        {button}
+                        <div className="btn-list">
+                            {button}
+                        </div>
+
                     </div>
                 </div>
             </header>

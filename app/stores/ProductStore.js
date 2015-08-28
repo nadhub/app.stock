@@ -15,9 +15,8 @@ class ProductStore {
         this.product = {};
         this.cache = {};
         this.loader = true;
+        this.menuAction = '';
         this.listProducts = [];
-
-
     }
 
     onReceivedProducts(products){
@@ -57,77 +56,32 @@ class ProductStore {
         })
     }
 
-
-
-    onStock(prod){
-
-        if(prod.inList){
-            if(prod.forList === 'Destocker'){
-                this.products.forEach((product)=>{
-                    while (product._id === prod._id){
-                        product.stock++;
-                        prod.inList = false;
-                        _.remove(this.listProducts, prod)
-                        if(!this.listProducts.length){
-                           this.listProducts = [];
-                        }
-                        break;
-                    }
-                })
-            }
-
-        }else{
-            if(!prod.inList && !this.listProducts.length){
-                this.products.forEach((product)=>{
-                    while (product._id === prod._id){
-                        product.forList = 'Stocker';
-                        product.inList = true;
-                        this.listProducts.push(product)
-                        break;
-                    }
-                })
-            }
-        }
+    onMenuAction(text){
+        this.menuAction = text;
     }
 
+   onAddToList(prod){
 
-    onDestock(prod){
+       for(let product of this.products){
+               if(product._id === prod._id){
+                   product.inCart = true;
+                   product.isSelected = true;
+                   this.listProducts.push(prod)
+                   break;
+               }
+       }
+   }
 
-        if(prod.inList){
-            if(prod.forList === 'Stocker'){
-                this.products.forEach((product)=>{
-                    while (product._id === prod._id){
-                        prod.inList = false;
-                        _.remove(this.listProducts, prod)
-                        if(!this.listProducts.length){
-                            this.listProducts = [];
-                        }
-                        break;
-                    }
-                })
-            }
-
-        }else {
-            if(!prod.inList && !this.listProducts.length){
-                this.products.forEach((product)=>{
-                    while (product._id === prod._id){
-                        product.stock--;
-                        product.forList = 'Destocker';
-                        product.inList = true;
-                        this.listProducts.push(product)
-                        break;
-                    }
-                })
-            }
-        } 
-    }
-
-    onCommand(prod){
-
-    }
-
-
-
+   onRemoveFromList(prod){
+       console.log(prod)
+       for(let product of this.products){
+           if(product._id === prod._id){
+               product.isSelected = false;
+               _.remove(this.listProducts, prod);
+               break;
+           }
+       }
+   }
 }
 
 export default alt.createStore(ProductStore, 'ProductStore');

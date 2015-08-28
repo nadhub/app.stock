@@ -13,7 +13,7 @@ class ProductListItems extends React.Component{
         }else{
             item = this.props.products.map((product, i)=>{
                 return(
-                    <ProductItem product={product} stock={this.props.stock} destock={this.props.destock} key={i} command={this.props.command} devis={this.props.devis}/>
+                    <ProductItem product={product} action={this.props.action} key={i} addToList={this.props.addToList} removeFromList={this.props.removeFromList}/>
                 )
             })
             return(
