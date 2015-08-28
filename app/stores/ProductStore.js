@@ -61,7 +61,6 @@ class ProductStore {
     }
 
    onAddToList(prod){
-
        for(let product of this.products){
                if(product._id === prod._id){
                    product.inCart = true;
@@ -73,7 +72,6 @@ class ProductStore {
    }
 
    onRemoveFromList(prod){
-       console.log(prod)
        for(let product of this.products){
            if(product._id === prod._id){
                product.isSelected = false;

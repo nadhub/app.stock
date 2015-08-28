@@ -23,7 +23,7 @@ export default class Navbar extends React.Component {
                                 Stock <span className="caret"></span>
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li><a onClick={this.props.action.bind(null, 'Entree')} >Entrer Stock</a></li>
+                                    <li><a onClick={this.props.action.bind(null, 'Entree')}>Entrer Stock</a></li>
                                     <li><a onClick={this.props.action.bind(null, 'Sortie')}>Sortir Stock</a></li>
                                     <li role="separator" className="divider"></li>
                                     <li><a >Lister Entrees</a></li>

@@ -4,7 +4,7 @@
 
 import React from 'react';
 import {Link} from 'react-router'
-import ConnectToStore from 'alt/utils/connectToStores'
+import ConnectToStore from 'alt/utils/connectToStores';
 
 import ProductActions from '../../actions/productActions';
 import ProductStore from '../../stores/ProductStore';
@@ -50,7 +50,8 @@ class Content extends React.Component {
         ProductActions.menuAction(text)
         switch (text){
             case  'Entree':
-                alert('Veuillez cliquez sur ajouter pour selectionner le(s) produit(s)');
+                $('#modal').show();
+                //alert('Veuillez cliquez sur ajouter pour selectionner le(s) produit(s)');
             break;
         }
     }

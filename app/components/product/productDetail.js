@@ -54,9 +54,9 @@ class Product extends React.Component{
                         </div>
                         <div className="col-sm-6">
                             <section className="col-sm-6 product-label">
-                                <h2>Code TPN : </h2>
+                                <h2>Code article: </h2>
                                 <h2>Category : </h2>
-                                <h2>Stock : </h2>
+                                <h2>Quantity en Stock : </h2>
                                 <h2>Price Int : </h2>
                                 <h2>Price Public : </h2>
                             </section>
@@ -72,7 +72,7 @@ class Product extends React.Component{
                    </div>
 
                    <div className="row">
-                        <button className="btn btn-primary btn-lg pull-right" onClick={this.commande.bind(this, prod)}>Commander</button>
+
                    </div>
                </div>
 
