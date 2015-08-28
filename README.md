@@ -2,9 +2,13 @@
 
 App  for managing  stock, using Flux and ReactJS for the Front End and Express on Backend (API). 
 
+Application de gestion de stock utilisant  ReactJS et FLux pour le Front End et Express (Node.js) coté serveur. 
 
 
- First:  
+ First:  You must set a variable environnement TARGET: 
+ Linux user : ``` export TARGET=dev ```
+ Windows user: ``` set TARGET=dev ```
+
  ```
  git clone git@github.com:nadhub/rma-API.git 
          npm i
@@ -15,6 +19,6 @@ App  for managing  stock, using Flux and ReactJS for the Front End and Express o
  ```
  git clone git@github.com:nadhub/app.stock.git
          npm i
-         npm start (Sous Windows il faut ajouter une variable d'environnement 'TARGET' set TARGET=dev)   
+         npm start   
 ```
 
