@@ -2,7 +2,6 @@
  * Created by nadir on 16/08/15.
  */
 import '!style!css!sass!../public/style/sass/main.sass';
-//import '../public/css/style.css';
 
 import React from 'react';
 import Router from 'react-router';
