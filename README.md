@@ -7,9 +7,11 @@ Application de gestion de stock utilisant :
     #Front
     -ReactJS et FLux (Alt.js). 
     -react-router
-    -Auth jwt  [source modifiée](https://goo.gl/C6hK4b)
+    -Auth jwt  
+    [source modifiée](https://goo.gl/C6hK4b)
     
-    #Backend [ici](https://goo.gl/WqKDSV)
+    #Backend 
+    [ici](https://goo.gl/WqKDSV)
     -Express (Node.js)
     -MongoDB
 
