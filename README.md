@@ -7,11 +7,19 @@ Application de gestion de stock utilisant
 ## Front
 * ReactJS et FLux (Alt.js). 
 * react-router
+<<<<<<< HEAD
 * Auth jwt     [source modifiée](https://goo.gl/C6hK4b)
     
 ## Backend   [ici](https://goo.gl/WqKDSV)
 *Express (Node.js)
 *MongoDB
+=======
+* Auth  [jwt](https://goo.gl/C6hK4b)
+    
+## Backend   [ici](https://goo.gl/WqKDSV)
+* Express (Node.js)
+* MongoDB
+>>>>>>> 51ec27018983dc6d64aed75f78b3a60b62174fe4
 
 
  First:  You must set a variable environnement TARGET: 
