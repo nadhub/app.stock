@@ -5,6 +5,7 @@ App  for managing  stock, using Flux and ReactJS for the Front End and Express o
 Application de gestion de stock utilisant
 
 ## Front
+* JS ES6
 * ReactJS et FLux (Alt.js). 
 * react-router
 * Auth jwt [source modifiée](https://goo.gl/C6hK4b)
