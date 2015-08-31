@@ -7,24 +7,15 @@ Application de gestion de stock utilisant
 ## Front
 * ReactJS et FLux (Alt.js). 
 * react-router
-<<<<<<< HEAD
-* Auth jwt     [source modifiée](https://goo.gl/C6hK4b)
+* Auth jwt [source modifiée](https://goo.gl/C6hK4b)
     
 ## Backend   [ici](https://goo.gl/WqKDSV)
 *Express (Node.js)
 *MongoDB
-=======
-* Auth  [jwt](https://goo.gl/C6hK4b)
-    
-## Backend   [ici](https://goo.gl/WqKDSV)
-* Express (Node.js)
-* MongoDB
->>>>>>> 51ec27018983dc6d64aed75f78b3a60b62174fe4
 
-
- First:  You must set a variable environnement TARGET: 
- Linux user : ``` export TARGET=dev ```
- Windows user: ``` set TARGET=dev ```
+First:  You must set a variable environnement TARGET: 
+Linux user : ``` export TARGET=dev ```
+Windows user: ``` set TARGET=dev ```
 
  ```
  git clone git@github.com:nadhub/rma-API.git 
@@ -32,7 +23,7 @@ Application de gestion de stock utilisant
          npm start 
 ```
            
- Then :  
+Then :  
  ```
  git clone git@github.com:nadhub/app.stock.git
          npm i
