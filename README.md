@@ -10,8 +10,8 @@ Application de gestion de stock utilisant
 * Auth jwt [source modifiée](https://goo.gl/C6hK4b)
     
 ## Backend   [ici](https://goo.gl/WqKDSV)
-*Express (Node.js)
-*MongoDB
+* Express (Node.js)
+* MongoDB
 
 First:  You must set a variable environnement TARGET: 
 Linux user : ``` export TARGET=dev ```
