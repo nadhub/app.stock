@@ -29,6 +29,7 @@
   "dependencies": {
     "alt": "^0.17.1",
     "jquery": "^2.1.4",
+    "jwt-decode": "^1.4.0",
     "lodash": "^3.10.1",
     "react": "^0.13.3",
     "react-router": "^0.13.3",

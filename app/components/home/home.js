@@ -3,34 +3,84 @@
  */
 
 import React from 'react';
-import { PropTypes } from 'react';
 import {RouteHandler, Link} from 'react-router';
+import AuthActions from '../../actions/authActions'
+import AuthStore from '../../stores/AuthStore';
+import RouterStore from '../../stores/RouterStore';
+import HeaderStore from '../../stores/HeaderStore'
+import router from '../../config/routerContainer';
 
+import DecoratorComponent from '../decoratorComponent';
 import Header from './header';
 import Navbar from '../navigation/navbar'
 
 
-class Home extends React.Component {
-    
-    constructor(props){
-        super(props);
+export default  class Home extends React.Component {
 
-    }
+        constructor(){
+            super();
+            this.state = {};
+            this.state.auth = AuthStore.getState();
+            this.state.header = HeaderStore.getState();
+            this.storeChanged = this.storeChanged.bind(this);
+            this.storeChangedHeader = this.storeChangedHeader.bind(this);
+            AuthStore.listen(this.storeChanged);
+            this.logout = this.logout.bind(this);
+        }
+
+        componentDidMount(){
+         AuthStore.listen(this.storeChaged)
+
+        }
+        componentDidMount() {
+        AuthStore.listen(this.storeChanged);
+        HeaderStore.listen(this.storeChangedHeader)
+        }
+
+        storeChanged() {
+        this.setState({auth: AuthStore.getState()});
+
+        let transitionPath = RouterStore.getState()._nextRoutePath || '/';
 
 
-    render(){
+        if(AuthStore.getState()._isLogin){
+            router.transitionTo(transitionPath);
+        }else{
+            router.transitionTo('/login');
+        }
+        }
 
-        return (
+        storeChangedHeader(){
+           this.setState({header: HeaderStore.getState()})
+        }
 
-            <div classNameName="">
-                <Header {...this.state}/>
+        componentWillUnmount() {
+            AuthStore.unlisten(this.storeChanged);
+            HeaderStore.unlisten(this.storeChangedHeader)
+        }
 
-                <RouteHandler {...this.state} search={this.setSearchCriteria} />
-            </div>
-        )
+        logout(){
+            AuthActions.logout()
+        }
 
-    }
+        render(){
+            let header;
+            if(AuthStore.getState()._isLogin){
+                header = (<Header {...this.state.header} user={this.state.auth.user} logout={this.logout}/>)
+            }else{
+                header = ''
+
+            }
+            return (
+
+                <div classNameName="">
+                    {header}
+                    <RouteHandler/>
+                </div>
+            )
+
+        }
+
 
 }
 
-export default Home

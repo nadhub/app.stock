@@ -5,8 +5,9 @@
 import React from 'react';
 import ProductAcions from '../../actions/productActions'
 import ProductStore from '../../stores/ProductStore.js'
+import Decorator from '../decoratorComponent'
 
-
+@Decorator
 class Product extends React.Component{
 
     constructor(props){
@@ -44,7 +45,7 @@ class Product extends React.Component{
                <div className="col-sm-8 col-sm-push-2">
                     <div className="row header">
                             <div className="col-sm-6"><h1> {this.state.product.productName} </h1></div>
-                            <div className="col-sm-6 text-right"><h2><button className="btn btn-primary btn-lg">Edit <i className=" glyphicon glyphicon-pencil"></i></button></h2></div>
+                    <div className="col-sm-6 text-right"><p><button className="btn btn-primary btn-lg">Edit <i className=" glyphicon glyphicon-pencil"></i></button></p></div>
                     </div>
 
                     <hr />
@@ -54,21 +55,22 @@ class Product extends React.Component{
                         </div>
                         <div className="col-sm-6">
                             <section className="col-sm-6 product-label">
-                                <h2>Code article: </h2>
-                                <h2>Category : </h2>
-                                <h2>Quantity en Stock : </h2>
-                                <h2>Price Int : </h2>
-                                <h2>Price Public : </h2>
+                                <p>Code article: </p>
+                                <p>Category : </p>
+                                <p>Quantity en stock : </p>
+                                <p>Price Int : </p>
+                                <p>Price Public : </p>
                             </section>
                            <section className="col-sm-6 text-right">
-                                 <h2>{this.state.product.productCode}</h2>
-                                 <h2>{this.state.product.category}</h2>
-                                 <h2>{this.state.product.stock}</h2>
-                                 <h2>{this.state.product.price}</h2>
-                                 <h2>{this.state.product.pricePublic}</h2>
+                                 <p>{this.state.product.productCode}</p>
+                                 <p>{this.state.product.category}</p>
+                                 <p>{this.state.product.stock}</p>
+                                 <p>{this.state.product.price}</p>
+                                 <p>{this.state.product.pricePublic}</p>
                            </section>
-                        </div>
 
+                        </div>
+                        <hr />
                    </div>
 
                    <div className="row">

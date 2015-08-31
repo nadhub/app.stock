@@ -3,7 +3,9 @@
  */
 
 import React from 'react';
+import Decorator from './decoratorComponent.js'
 
+@Decorator
 class NotFound extends React.Component{
     constructor(props){
         super(props)
