@@ -14,7 +14,7 @@ import NotFound from '../components/notFound';
 export default (
     <Route name="home" path="/"  handler={Home}>
         <DefaultRoute handler={Content}/>
-        <Route name="detail" path="/details/:productId" handler={ProductDetail} />
+        <Route name="product" path="/product/:productId" handler={ProductDetail} />
         <Route name="listProduct" path="list" handler={ListProduct} />
         <Route name="login" path="login" handler={Login} />
         <NotFoundRoute handler={NotFound}/>

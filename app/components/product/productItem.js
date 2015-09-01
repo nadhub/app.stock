@@ -25,7 +25,7 @@ class ProductItem extends React.Component{
                         <p className="qty"><small>Stock</small> <span  className="stock">{prod.stock}</span> </p>
                         <p className="tpn"> {prod.productCode} </p>
                         <div className="">
-                            <Link to="detail" params={{productId: prod._id}}><button className="btn btn-default">Details...</button></Link>
+                            <Link to="product" params={{productId: prod._id}}><button className="btn btn-default">Details...</button></Link>
                             {this.props.action !== '' &&  !prod.isSelected ? <button className='btn btn-primary pull-right' onClick={this.props.addToList.bind(null, prod)}>Ajouter à la liste</button> : ''}
                             {prod.isSelected ? <button className='btn btn-default pull-right' onClick={this.props.removeFromList.bind(null, prod)} >Retirer de la liste <i className="glyphicon glyphicon-minus"></i></button>  : ''}
 

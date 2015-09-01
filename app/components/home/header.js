@@ -28,16 +28,17 @@ export default class Header extends React.Component {
             button = '';
         }
 
+        let styleLiA = {cursor: 'pointer'};
         let buttonLogout;
         if(this.props.user){
             buttonLogout = (<div className="btn-group btn-logout">
                                 <button type="button" className="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Welcome {this.props.user.name}&nbsp;
+                                    <i className="glyphicon glyphicon-user"></i> &nbsp;Welcome {this.props.user.name}&nbsp;
                                 <span className="caret"></span>
                                 <span className="sr-only"></span>
                                 </button>
-                                    <ul className="dropdown-menu">
-                                        <li onClick={this.props.logout}><a>Logout</a></li>
+                                    <ul className="dropdown-menu" >
+                                        <li onClick={this.props.logout}><a style={styleLiA}> Logout</a></li>
                                     </ul>
                             </div>
                         )

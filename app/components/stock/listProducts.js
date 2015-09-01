@@ -57,7 +57,7 @@ class ListProduct extends React.Component {
                                 {this.state.listName === 'Entree' || this.state.listName === 'Sortie' ? (<td>A rentrer</td>) : ''}
                                 <td><input type="number"/></td>
                             </tr>
-                        )
+                                                    )
                     })}
                     </tbody>
                 </table>

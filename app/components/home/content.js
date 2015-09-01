@@ -57,7 +57,6 @@ import Search from './search';
             ProductActions.menuAction(text)
             switch (text){
                 case  'Entree':
-                    $('#modal').show();
                     break;
             }
         }
