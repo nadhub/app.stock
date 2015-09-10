@@ -15,7 +15,7 @@ class Search extends React.Component{
             <div className="row search">
 
                 <div className="row">
-                    <div className="col-md-4 col-sm-push-4">
+                    <div className="col-md-4 col-sm-push-8">
                         <form  className="search-form">
                             <div className="form-group has-feedback">
                                 <label htmlFor="search" className="sr-only">Search</label>

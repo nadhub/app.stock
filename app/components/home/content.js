@@ -14,6 +14,7 @@ import RouterStore from '../../stores/RouterStore.js';
 import ProductListItems from '../product/productListItems';
 import Navbar from '../navigation/navbar';
 import Search from './search';
+import ModalAddProduct from '../product/modalAddProduct';
 
 
 @Decorator
@@ -26,12 +27,15 @@ import Search from './search';
             this.storeChanged = this.storeChanged.bind(this);
             ProductStore.listen(this.storeChanged);
             this.state.input = '';
+            this.state.modalIsOpen = false;
 
 
             this.searchForProduct = this.searchForProduct.bind(this);
             this.menuAction = this.menuAction.bind(this);
             this.addToList = this.addToList.bind(this);
             this.removeFromList = this.removeFromList.bind(this);
+            this.closeModal = this.closeModal.bind(this)
+            this.openModal = this.openModal.bind(this)
 
         }
 
@@ -53,7 +57,6 @@ import Search from './search';
         }
 
         menuAction(text){
-            //this.setState({menuAction: text});
             ProductActions.menuAction(text)
             switch (text){
                 case  'Entree':
@@ -71,6 +74,14 @@ import Search from './search';
             ProductActions.listProducts()
         }
 
+        closeModal(){
+            this.setState({modalIsOpen: false})
+        }
+        openModal(){
+            this.setState({modalIsOpen: true})
+        }
+
+
 
 
         render(){
@@ -84,9 +95,13 @@ import Search from './search';
 
                         <Search  searchInput={this.state.input} onChange={this.searchForProduct}/>
                         <div className="row info-box">
-                            <ProductListItems  products={this.state.products} action={this.state.menuAction} addToList={this.addToList} removeFromList={this.removeFromList}/>
-                        </div>
+                            {this.state.products.length ? <ProductListItems  products={this.state.products} action={this.state.menuAction} addToList={this.addToList} removeFromList={this.removeFromList}/> : 'Loading...'}
 
+                        </div>
+                        <div className="add-product">
+                            <button className="btn btn-primary" onClick={this.openModal}><i className="glyphicon glyphicon-plus"></i></button>
+                        </div>
+                        <ModalAddProduct modalIsOpen={this.state.modalIsOpen} closeModal={this.closeModal}/>
                     </div>
                 </div>
 
